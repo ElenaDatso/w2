@@ -1,0 +1,41 @@
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: slideIn;
+  animation-duration: 0.5s;
+}
+
+.modalContent {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: slideInContent;
+  animation-duration: 0.5s;
+  padding: 20px;
+  border: 1px solid #888;
+  background-color: #fff;
+  max-width: 500px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes slideInContent {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 50%;
+  }
+}

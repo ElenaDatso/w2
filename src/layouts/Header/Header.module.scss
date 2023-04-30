@@ -1,0 +1,22 @@
+.menuList {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.link {
+  color: goldenrod;
+  transition: 200ms all ease-in;
+
+  &:hover {
+    color: darkgoldenrod;
+    text-decoration: underline;
+  }
+}
+
+.active {
+    color: darkgoldenrod;
+    text-decoration: underline;
+}
