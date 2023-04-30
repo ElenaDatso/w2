@@ -7,7 +7,6 @@ function App() {
       <Routing />
     </div>
   );
-  // return <div>lala</div>;
 }
 
 export default App;

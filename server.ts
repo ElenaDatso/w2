@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 import { createServer as createViteServer } from 'vite';
 import { Writable } from 'stream';
 
-const PORT = 8000;
+const PORT = 3000;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -31,19 +31,17 @@ async function createServer() {
           callback();
         },
       });
-      let template = fs.readFileSync(path.resolve(__dirname, 'src/index.html'), 'utf-8');
+      let template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
       if (vite) template = await vite.transformIndexHtml(url, template);
       const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
-      const { stream, injectPreload } = (await render({ path: url })) as {
+      const { stream } = (await render({ path: url })) as {
         stream: ReactDOMServer.PipeableStream;
         injectPreload: () => string;
       };
       stream.pipe(writableStream);
-      // const context: { url?: string } = {};
       writableStream.on('finish', () => {
         const textContent = buffer.join('').toString();
         const temp = template.replace(`<!--ssr-outlet-->`, textContent);
-        console.log(temp);
         res.status(200).set({ 'Content-Type': 'text/html' }).end(temp);
       });
     } catch (e) {

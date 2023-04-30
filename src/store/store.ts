@@ -3,7 +3,6 @@ import type { PreloadedState } from '@reduxjs/toolkit';
 
 import formReducer from '../pages/Form/formReducer';
 import searchInputReducer from '../layouts/SearchBar/searchInputReducer';
-// import searchSubmitReducer from '../layouts/SearchBar/searchSubmitReducer';
 import apiGetDataReducer from '../layouts/SearchBar/seatchData';
 
 const rootReducer = combineReducers({
