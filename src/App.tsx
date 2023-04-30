@@ -1,9 +1,13 @@
 import './theme/global.scss';
-import { RouterProvider } from 'react-router-dom';
-import router from './routing/Router';
+import Routing from './routing/Routing';
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <Routing />
+    </div>
+  );
+  // return <div>lala</div>;
 }
 
 export default App;
