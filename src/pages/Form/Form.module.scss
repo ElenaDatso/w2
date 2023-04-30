@@ -1,0 +1,10 @@
+.wrap {
+  display: flex;
+}
+.cardsWrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-basis: 80%;
+}
